@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- generated via ecosia.org/chat -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapas de Evacuación ante Tsunami</title>
+    <style>
+        body {
+            font-family: Montserrat, Helvetica, sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            text-align: center;
+            color: #005aab;
+            margin: 0;
+            padding: 48px 96px;
+        }
+        .gallery {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas:
+                "x a b c"
+                "x d e f";
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+        }
+        .gallery h3 {
+            margin: 0;
+        }
+        @media (max-width: 1200px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                grid-template-areas:
+                    "x a b"
+                    "x c d"
+                    "x e f";
+            }
+        }
+        @media (max-width: 888px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+                grid-template-areas:
+                    "x x"
+                    "a b"
+                    "c d"
+                    "e f";
+            }
+        }
+        @media (max-width: 576px) {
+            .gallery {
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(7, 1fr);
+                grid-template-areas:
+                    "x"
+                    "a"
+                    "b"
+                    "c"
+                    "d"
+                    "e"
+                    "f";
+            }
+        }
+    </style>
+</head>
+<body>
+<span>GADM del Cantón Manta &ndash; Dirección de Ambiente, Riesgos y Fauna Urbana</span>
+<h1>Mapas de Evacuación ante Tsunami</h1>
+<span>(escanea el QR o selecciona el LINK para acceder al mapa)</span>
+<div class="gallery">
+    <div style="grid-area: x; align-self: center;">
+        <img src="qrs/canton-manta.png" alt="Mapa Cantonal">
+        <a href="canton-manta.html">Mapa Cantonal</a>
+    </div>
+    <div style="grid-area: a;">
+        <img src="qrs/parroquia-manta.png" alt="Parroquia Manta">
+        <a href="parroquia-manta.html">Parroquia Manta</a>
+    </div>
+    <div style="grid-area: b;">
+        <img src="qrs/parroquia-tarqui.png" alt="Parroquia Tarqui">
+        <a href="parroquia-tarqui.html">Parroquia Tarqui</a>
+    </div>
+    <div style="grid-area: c;">
+        <img src="qrs/parroquia-los-esteros.png" alt="Parroquia Los Esteros">
+        <a href="parroquia-los-esteros.html">Parroquia Los Esteros</a>
+    </div>
+    <div style="grid-area: d;">
+        <img src="qrs/parroquia-san-mateo.png" alt="Parroquia San Mateo">
+        <a href="parroquia-san-mateo.html">Parroquia San Mateo</a>
+    </div>
+    <div style="grid-area: e;">
+        <img src="qrs/parroquia-santa-marianita.png" alt="Parroquia Santa Marianita">
+        <a href="parroquia-santa-marianita.html">Parroquia Santa Marianita</a>
+    </div>
+    <div style="grid-area: f;">
+        <img src="qrs/parroquia-san-lorenzo.png" alt="Parroquia San Lorenzo">
+        <a href="parroquia-san-lorenzo.html">Parroquia San Lorenzo</a>
+    </div>
+</div>
+</body>
+</html>
