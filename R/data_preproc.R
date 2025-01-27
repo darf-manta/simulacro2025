@@ -34,3 +34,9 @@ data_rutas = read_sf(data_gpkg, "gadm2024_rutas_evacuacion") |>
    st_transform(4326)
 
 write_sf(data_rutas, paste0("data/manta_pet_rutas_", format(Sys.Date(), "%Y%m%d"), ".geojson"))
+
+data_participantes = read_sf("tmp/consolidado_participantes.gpkg", "consolidado_participantes") |>
+   select(tipo_part = componente, nom_part = elemento, nom_zona = zona_segura, parroquia) |>
+   st_transform(4326)
+
+write_sf(data_participantes, paste0("data/manta_sim_participantes_", format(Sys.Date(), "%Y%m%d"), ".geojson"))
