@@ -105,9 +105,9 @@ target_map = leaflet(options = leafletOptions(minZoom = 14, maxZoom = 19)) |>
    addMarkers(data = filter(participantes_filter, tipo_part == "Hotel"),
               popupOptions = popups, icon = icon_ho, group = "Instituciones y Comunidades Participantes",
               popup = ~paste("<b>", nom_part, "</b>", if_else(is.na(n_participantes), " ", if_else(
-                 nom_zona == "evacuación interna",
+                 n_participantes == 0,
                  "<br>Solo evacuación interna",
-                 paste("<br>Dirigirse",
+                 paste("<br>Evacuación externa:<br><b>", n_participantes, "personas</b><br>Dirigirse",
                        if_else(grepl("P.E.", nom_zona), "al Punto de Encuentro:", "a la Zona Segura:"),
                        "<br><b>", nom_zona, "</b>")
               )))) |>
