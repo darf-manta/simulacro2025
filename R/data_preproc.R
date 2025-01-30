@@ -9,8 +9,20 @@ data_tsunami = read_sf(data_gpkg, "inocar2019_area_inundacion") |>
 
 write_sf(data_tsunami, paste0("data/manta_pet_tsunami_", format(Sys.Date(), "%Y%m%d"), ".geojson"))
 
+data_participantes = read_sf("tmp/consolidado_participantes.gpkg", "consolidado_participantes") |>
+   select(tipo_part = componente, nom_part = elemento, nom_zona = zona_segura, parroquia, n_participantes) |>
+   st_transform(4326)
+
+write_sf(data_participantes, paste0("data/manta_sim_participantes_", format(Sys.Date(), "%Y%m%d"), ".geojson"))
+
+data_participantes_por_zona = st_drop_geometry(data_participantes) |>
+   count(nom_zona, wt = n_participantes, name = "n_participantes") |>
+   filter( ! nom_zona %in% c("evacuación interna", "no evacúa"))
+
 data_zonas = read_sf(data_gpkg, "gadm2024_zonas_seguras") |>
-   select(id_zona, nom_zona, parroquia, maps_url) |>
+   left_join(data_participantes_por_zona, by = "nom_zona") |>
+   mutate(n_participantes = coalesce(n_participantes, 0)) |>
+   select(id_zona, nom_zona, parroquia, n_participantes, maps_url) |>
    st_transform(4326)
 
 write_sf(data_zonas, paste0("data/manta_pet_zonas_", format(Sys.Date(), "%Y%m%d"), ".geojson"))
@@ -34,9 +46,3 @@ data_rutas = read_sf(data_gpkg, "gadm2024_rutas_evacuacion") |>
    st_transform(4326)
 
 write_sf(data_rutas, paste0("data/manta_pet_rutas_", format(Sys.Date(), "%Y%m%d"), ".geojson"))
-
-data_participantes = read_sf("tmp/consolidado_participantes.gpkg", "consolidado_participantes") |>
-   select(tipo_part = componente, nom_part = elemento, nom_zona = zona_segura, parroquia) |>
-   st_transform(4326)
-
-write_sf(data_participantes, paste0("data/manta_sim_participantes_", format(Sys.Date(), "%Y%m%d"), ".geojson"))
