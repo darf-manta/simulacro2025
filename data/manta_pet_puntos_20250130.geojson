@@ -51,6 +51,6 @@
 { "type": "Feature", "properties": { "id_punto": 46.0, "nom_punto": "Calle prin. e ingreso a U.E. Robert I. Mero", "nom_zona": "Cancha de la Iglesia Sta. Rosa", "parroquia": "San Lorenzo" }, "geometry": { "type": "Point", "coordinates": [ -80.886313931276206, -1.124830737434754 ] } },
 { "type": "Feature", "properties": { "id_punto": 9001.0, "nom_punto": "Cancha 15 de Septiembre", "nom_zona": "sin zona segura", "parroquia": "Tarqui" }, "geometry": { "type": "Point", "coordinates": [ -80.729219254872703, -0.961297826397841 ] } },
 { "type": "Feature", "properties": { "id_punto": 9002.0, "nom_punto": "Parque Las Brisas", "nom_zona": "sin zona segura", "parroquia": "Los Esteros" }, "geometry": { "type": "Point", "coordinates": [ -80.700860806405714, -0.964881834434338 ] } },
-{ "type": "Feature", "properties": { "id_punto": 9003.0, "nom_punto": "Calle lateral de la EEB Luis Espinoza Martinez", "nom_zona": "sin zona segura", "parroquia": "Tarqui" }, "geometry": { "type": "Point", "coordinates": [ -80.721414559611148, -0.957203623828487 ] } }
+{ "type": "Feature", "properties": { "id_punto": 9003.0, "nom_punto": "Calle lateral de la EEB Luis Espinoza Martinez", "nom_zona": "sin zona segura", "parroquia": "Tarqui" }, "geometry": { "type": "Point", "coordinates": [ -80.722083765429417, -0.957338599519092 ] } }
 ]
 }
