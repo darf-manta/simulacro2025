@@ -102,6 +102,15 @@ target_map = leaflet(options = leafletOptions(minZoom = 14, maxZoom = 19)) |>
                        if_else(grepl("P.E.", nom_zona), "al Punto de Encuentro:", "a la Zona Segura:"),
                        "<br><b>", nom_zona, "</b>")
               )))) |>
+   addMarkers(data = filter(participantes_filter, tipo_part == "Hotel"),
+              popupOptions = popups, icon = icon_ho, group = "Instituciones y Comunidades Participantes",
+              popup = ~paste("<b>", nom_part, "</b>", if_else(is.na(n_participantes), " ", if_else(
+                 nom_zona == "evacuación interna",
+                 "<br>Solo evacuación interna",
+                 paste("<br>Dirigirse",
+                       if_else(grepl("P.E.", nom_zona), "al Punto de Encuentro:", "a la Zona Segura:"),
+                       "<br><b>", nom_zona, "</b>")
+              )))) |>
    addMarkers(data = filter(participantes_filter, tipo_part == "Comité de Operaciones de Emergencia"),
               popupOptions = popups, icon = icon_oe, group = "Instituciones y Comunidades Participantes",
               popup = ~paste("<b>", nom_part, "</b>"))

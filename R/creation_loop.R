@@ -15,7 +15,7 @@ break_label = function(label) {
    paste(broken_label, collapse = "\n")
 }
 
-data_version = "20250126"
+data_version = "20250130"
 
 tsunami = read_sf(paste0("data/manta_pet_tsunami_", data_version, ".geojson"))
 
@@ -38,6 +38,7 @@ icon_er = list(iconSize = c(25, 25), iconUrl = "data/building-solid.svg")
 icon_ep = list(iconSize = c(25, 25), iconUrl = "data/building-flag-solid.svg")
 icon_ie = list(iconSize = c(25, 25), iconUrl = "data/school-flag-solid.svg")
 icon_oe = list(iconSize = c(25, 25), iconUrl = "data/people-line-solid.svg")
+icon_ho = list(iconSize = c(25, 25), iconUrl = "data/bed-solid.svg")
 
 paths = pathOptions(interactive = FALSE)
 
